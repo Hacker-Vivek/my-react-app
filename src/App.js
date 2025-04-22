@@ -8,7 +8,11 @@ function App() {
   const handleClick = (value) => {
     if (value === "=") {
       try {
-        setInput(eval(input).toString());
+        try {
+  setInput(eval(input).toString());
+} catch (error) {
+  setInput("Error");
+}
       } catch {
         setInput("Error");
       }
